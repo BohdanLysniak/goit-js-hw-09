@@ -9,9 +9,9 @@ a {
 .feedback-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  justify-content: left;
+  row-gap: 8px;
+  align-items: start;
+  justify-content: center;
   border-radius: 8px;
   padding: 24px;
   width: 408px;
@@ -21,7 +21,7 @@ a {
 
 .feedback-form > label {
   width: 360px;
-  height: 72px;
+  min-height: 72px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -43,11 +43,20 @@ a {
   letter-spacing: 0.04em;
   color: #2e2f42;
   padding: 8px 16px;
+  margin-top: 8px;
+}
+
+.feedback-form > label > input:hover {
+  outline: auto;
+}
+
+.feedback-form > label > input:focus {
+  outline: transparent;
 }
 
 .feedback-form > label + label {
   width: 360px;
-  height: 112px;
+  min-height: 112px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -68,6 +77,15 @@ textarea {
   letter-spacing: 0.04em;
   color: #2e2f42;
   padding: 8px 16px;
+  margin-top: 8px;
+}
+
+textarea:hover {
+  outline: auto;
+}
+
+textarea:focus {
+  outline: transparent;
 }
 
 button {
@@ -78,7 +96,7 @@ button {
   padding: 8px 16px;
   width: 95px;
   height: 40px;
-  margin-top: 16px;
+  margin-top: 8px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -87,4 +105,10 @@ button {
   color: #fff;
   background: #4e75ff;
   border: transparent;
+  transition: color 250ms ease-in-out;
+}
+
+button:hover {
+  background: #6c8cff;
+  cursor: pointer;
 }

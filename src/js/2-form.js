@@ -4,10 +4,11 @@ const inputEmail = form.elements.email;
 const inputMessage = form.elements.message;
 const localStorageKey = "feedback-form-state";
 
-inputEmail.value = JSON.parse(localStorage.getItem(localStorageKey)).email ?? "";
-inputMessage.value = JSON.parse(localStorage.getItem(localStorageKey)).message ?? "";
+const storedData = JSON.parse(localStorage.getItem(localStorageKey));
 
-// form.elements.message.value = localStorage.getItem(localStorageKey) ?? "";
+inputEmail.value = (storedData && storedData.email) ? storedData.email : "";
+inputMessage.value = (storedData && storedData.message) ? storedData.message : "";
+
 
 form.addEventListener("input", addLocalStorageItem);
 function addLocalStorageItem() {
